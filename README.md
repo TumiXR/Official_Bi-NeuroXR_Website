@@ -1,2 +1,2 @@
 # Official_Bi-NeuroXR_Website
-A website advertising my VR brand.
+Biosignal VR Headgear system - React/Three.js frontend with real-time 3D product Viewer.
