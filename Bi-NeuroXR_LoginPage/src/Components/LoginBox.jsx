@@ -4,43 +4,53 @@ import '../script.js'
 const LoginBox = () => {
   return (
     <div className='wrapper'>
-        <div className='form-box login'>
+        <div className='form-box_login'>
 
             <h2>Login</h2>
-            <form action="#"></form>
+            <form action="#">
 
-            <div className='input-box'>
-                <span className='icon'>
-                    <ion-icon name = 'mail'></ion-icon>
-                </span>
-                <input type='email'></input>
-                <label>Email</label>
-            </div>
+                <div className='input-box'>
+
+                    <span className='icon'>
+                        <ion-icon name="mail-sharp"></ion-icon>
+                    </span>
+
+                    <input type='email'></input>
+                    <label>Email</label>
+                </div>
             
-            <div className='input-box'>
-                <span className='icon'>
-                     <ion-icon name = 'lock-closed'></ion-icon>
-                </span>
-                <input type='Password'></input>
-                <label>Password</label>
-            </div>
+                    <div className='input-box'>
 
-            <div className='remember-forgot'>
+                    <span className='icon'>
+                        <ion-icon name="lock-closed-sharp"></ion-icon>
+                    </span>
 
-                <label className='checkbox'>
-                    <input type='checkbox'></input>
-                    Remember me <a href='#'>Forgot Password?</a>
+                    <input type='Password'></input>
+                    <label>Password</label>
+                 </div>
 
-                </label>
+                    <div className='remember-forgot'>
 
-            </div>
+                         <label className='checkbox'>
 
-            <button className = "btn" type='submit'>Log-In</button>
+                            <input type='checkbox'></input>
+                                Remember me 
 
-            <div className='login-register'>
-                <p>Don't have an account?
-                    <a className="register-link" href='#'></a></p>
-            </div>
+                        </label>
+
+                            <a href='#'> Forgot Password? </a>
+
+                    </div>
+
+                        <button className = "btn" type='submit'>Log-In</button>
+
+                            <div className='login-register'>
+                                 <p>Don't have an account?
+                                     <a className="register-link" href='#'> Register</a>
+                                </p>
+                            </div>
+
+            </form>
 
         </div>
     </div>
