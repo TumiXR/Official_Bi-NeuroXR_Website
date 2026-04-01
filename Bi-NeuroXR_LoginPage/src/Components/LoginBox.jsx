@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../script.js'
 
 const LoginBox = () => {
+    const [showPassword, setShowPassword] = useState(false)
+
   return (
     <div className='wrapper'>
         <div className='form-box_login'>
@@ -9,7 +11,7 @@ const LoginBox = () => {
             <h2>Login</h2>
             <form action="#">
 
-                <div className='input-box'>
+                <div className='input-box1'>
 
                     <span className='icon'>
                         <ion-icon name="mail-sharp"></ion-icon>
@@ -19,13 +21,13 @@ const LoginBox = () => {
                     <label>Email</label>
                 </div>
             
-                    <div className='input-box'>
+                    <div className='input-box2'>
 
-                    <span className='icon'>
-                        <ion-icon name="lock-closed-sharp"></ion-icon>
+                    <span className='icon' onClick={() => setShowPassword(!showPassword)}>
+                        <ion-icon name={showPassword ? 'eye-sharp' : 'eye-off-sharp' } ></ion-icon>
                     </span>
 
-                    <input type='Password'></input>
+                    <input type={showPassword ? 'text' : 'password' } ></input>
                     <label>Password</label>
                  </div>
 
