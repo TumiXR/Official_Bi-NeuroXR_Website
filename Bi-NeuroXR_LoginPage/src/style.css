@@ -94,21 +94,59 @@ header {
     margin-left: 40px;
 }
 
-.wrapper {
+.wrapper-login {
     position: relative;
     background: transparent;
     width: 400px;
-    height: 420px;
+    height: 490px;
     border: 2px solid rgba(225 , 155 , 255, .5);   
     border-radius: 15px;
-    backdrop-filter: blur(15px);
     box-shadow: 0 0 30px rgba( 0 , 0 , 0 , .5);
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+    -webkit-transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.wrapper-registor {
+    position: relative;
+    background: transparent;
+    width: 400px;
+    height: 490px;
+    border: 2px solid rgba(225 , 155 , 255, .5);   
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba( 0 , 0 , 0 , .5);
+}
+
+.wrapper-login.flipped{
+    transform: rotateY(180deg);
+}
+
+.Card-Container {
+    perspective: 1000px;
+    width: 400px;
+    height: 490px;
+    isolation: isolate;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    background:black;
+    width: 400px;
+    height: 490px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.wrapper .form-box_login{
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.wrapper-login .form-box_login{
     padding: 40px 50px;
     width: 100%; 
 }
@@ -249,16 +287,41 @@ header {
     margin: 25px 0 10px;
 }
 
-.login-register p a {
+.login-register p button {
     font-size: .9em;
     font-weight: 600;
 }
 
-.login-register a {
+.login-register button {
+    color:  rgba(179, 0, 255, 0.5);
+    background: transparent;
     text-decoration: none;
+    margin-left: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
-.login-register a:hover {
+.login-register button:hover {
     text-decoration: underline;
 }
 
+.sign-in_register {
+     color: white;
+    font-size: .8em;
+    font-weight: 500;
+    text-align: center;
+    margin: 25px 0 10px;
+    margin-top: -10px;
+}
+
+
+.sign-in_register p button{
+    color:  rgba(179, 0, 255, 0.5);
+    background: transparent;
+    text-decoration: none;
+    margin-left: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

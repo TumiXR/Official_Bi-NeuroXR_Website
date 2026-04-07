@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import '../script.js'
+import '../script'
 
-const LoginBox = () => {
+const LoginBox = ({ onFlip }) => {
     const [showPassword, setShowPassword] = useState(false)
 
   return (
-    <div className='wrapper'>
+    <div className='wrapper-login'>
         <div className='form-box_login'>
 
             <h2>Login</h2>
@@ -33,27 +33,23 @@ const LoginBox = () => {
 
                     <div className='remember-forgot'>
 
-                         <label className='checkbox'>
+                        <label className='checkbox'>
 
                             <input type='checkbox'></input>
                                 Remember me 
 
                         </label>
-
                             <a href='#'> Forgot Password? </a>
-
                     </div>
-
                         <button className = "btn" type='submit'>Log-In</button>
 
-                            <div className='login-register'>
+                                <div className='login-register'>
+                                    
                                  <p>Don't have an account?
-                                     <a className="register-link" href='#'> Register</a>
+                                     <button className="register-btn" onClick={onFlip}>Registor</button>
                                 </p>
                             </div>
-
             </form>
-
         </div>
     </div>
   )
