@@ -4,52 +4,51 @@ const Register = ({ onFlip }) => {
   const [showPassword, setShowPassword] = useState(false)
 
   return (
-     <div className='wrapper-registor'>
+     <div className='wrapper-register'>
         <div className='form-box_login'>
 
-            <h2>Registor</h2>
+            <h2>Register</h2>
             <form action="#">
 
                  <div className='input-box1'>
-
                     <span className='icon'>
                         <ion-icon name="person-sharp"></ion-icon>
                     </span>
 
-                    <input type='User'></input>
+                    <input type='text'></input>
                     <label>Username</label>
                   </div>
 
-                <div className='input-box1'>
-                    <span className='icon'>
-                        <ion-icon name="mail-sharp"></ion-icon>
-                    </span>
+                    <div className='input-box1'>
+                        <span className='icon'>
+                            <ion-icon name="mail-sharp"></ion-icon>
+                        </span>
 
-                    <input type='email'></input>
-                    <label>Email</label>
-                </div>
+                        <input type='email'></input>
+                        <label>Email</label>
+                    </div>
             
-                <div className='input-box2'>
-                    <span className='icon' onClick={() => setShowPassword(!showPassword)}>
-                        <ion-icon name={showPassword ? 'eye-sharp' : 'eye-off-sharp' } ></ion-icon>
-                    </span>
+                    <div className='input-box2'>
+                        <span className='icon' onClick={() => setShowPassword(!showPassword)}>
+                            <ion-icon name={showPassword ? 'eye-sharp' : 'eye-off-sharp' } ></ion-icon>
+                        </span>
 
-                    <input type={showPassword ? 'text' : 'password' } ></input>
-                    <label>Password</label>
-                </div>
+                        <input type={showPassword ? 'text' : 'password' } ></input>
+                        <label>Password</label>
+                    </div>
 
-                <div className='input-box1'>
-                    <input type={showPassword ? 'text' : 'password' } ></input>
-                    <label>Password</label>
-                </div>
+                    <div className='input-box1'>
+                        <input type="password"></input>
+                        <label>Confirm password</label>
+                    </div>
 
-                <button className = "btn" type='submit'>Sign-in</button>
-            </form>
-        </div>
-          <div className='sign-in_register'>                
+                    <button className = "btn" type='submit'>Sign-up</button>
+                </form>
+            </div>
+            <div className='login-register'>                
                 <p>Already have an account?
-                  <button className="register-btn" onClick={onFlip}>Login</button>
-              </p>
+                    <button className="register-btn" onClick={onFlip}>Login</button>
+                </p>
           </div>
     </div>
     

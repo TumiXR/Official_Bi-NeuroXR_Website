@@ -8,14 +8,18 @@ const CardFlip = () => {
 
   return (
     <div className='Card-Container'>
-        <div className={`wrapper-login ${isFlipped ? 'flipped' : ''}`}>
+        <div className={`card-inner ${isFlipped ? 'flipped' : ''}`}>
 
             <div className='card-front'>
+                <div className="wrapper-login">
                 <LoginForm onFlip={() => setIsFlipped(true)} />
+                </div>
             </div>
 
             <div className='card-back'>
+                <div className="wrapper-register">
                 <RegisterForm onFlip={() => setIsFlipped(false)}/>
+                </div>
             </div>
         </div>
     </div>
