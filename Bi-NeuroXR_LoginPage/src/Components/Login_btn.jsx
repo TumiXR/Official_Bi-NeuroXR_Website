@@ -10,7 +10,7 @@ const Login_btn = () => {
  
       {isLoggedIn ? (
         <div className="nav-icons">
-          <ion-icon name="cart-sharp" style={{fontsize: '24px'}}></ion-icon>
+          <ion-icon name="cart-sharp"></ion-icon>
           <ion-icon name="person-circle-sharp"></ion-icon>
         </div>
     ):(

@@ -6,6 +6,7 @@ import ForgotPassword from "./Components/ForgotPassword"
 import Service from './Components/Service.jsx'
 import About from './Components/About.jsx'
 import Support from './Components/Support.jsx'
+import Dashboard from './Components/Dashboard.jsx'
 
 function App() {
   return(
@@ -18,6 +19,7 @@ function App() {
         <Route path='/service' element={<Service />} />
         <Route path='/support' element={<Support />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
+        <Route path='/dashboard' element={<Dashboard/>} />
       </Routes>
     </>
 

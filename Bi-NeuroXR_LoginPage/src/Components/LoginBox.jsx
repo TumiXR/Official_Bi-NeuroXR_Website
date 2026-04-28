@@ -1,9 +1,29 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import '../script'
+import { Link, useNavigate } from 'react-router-dom'
+import { supabase } from '../supabase'
 
 const LoginBox = ({ onFlip }) => {
     const [showPassword, setShowPassword] = useState(false)
+    const navigate = useNavigate()
+
+    //supabase use states
+    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
+
+    const handleLogin = async () => {
+      const { error } = await supabase.auth.signUp({
+        email,
+        password,
+      })
+    
+      if (error) {
+        alert(error.message)
+      } else {
+        navigate('/dashboard')
+        
+        }
+    }
+    
 
   return (
     <div className='wrapper-login'>
@@ -15,7 +35,12 @@ const LoginBox = ({ onFlip }) => {
                             <ion-icon name="mail-sharp"></ion-icon>
                         </span>
 
-                        <input type='email'></input>
+                        <input 
+                        type='email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        />
+                       
                         <label>Email</label>
                     </div>
             
@@ -24,7 +49,11 @@ const LoginBox = ({ onFlip }) => {
                             <ion-icon name={showPassword ? 'eye-sharp' : 'eye-off-sharp' } ></ion-icon>
                         </span>
 
-                        <input type={showPassword ? 'text' : 'password' } ></input>
+                        <input 
+                        type={showPassword ? 'text' : 'password' } 
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        />
                         <label>Password</label>
                     </div>
 
@@ -35,7 +64,13 @@ const LoginBox = ({ onFlip }) => {
                         </label>
                             <Link to='/forgot-password' className='forgot-link'>Forgot Password?</Link>
                     </div>
-                        <button className = "btn" type='submit'>Log-In</button>
+                        <button 
+                        className = "btn" 
+                        type='button'
+                        onClick={handleLogin}
+                        >
+                        Log-In
+                        </button>
 
                     <div className='login-register'>
                         <p>Don't have an account?
