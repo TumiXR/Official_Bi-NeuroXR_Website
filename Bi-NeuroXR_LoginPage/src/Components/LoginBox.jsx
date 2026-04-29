@@ -11,7 +11,7 @@ const LoginBox = ({ onFlip }) => {
     const [email, setEmail] = useState('')
 
     const handleLogin = async () => {
-      const { error } = await supabase.auth.signUp({
+      const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
       })
@@ -22,8 +22,7 @@ const LoginBox = ({ onFlip }) => {
         navigate('/dashboard')
         
         }
-    }
-    
+    } 
 
   return (
     <div className='wrapper-login'>

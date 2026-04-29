@@ -1,9 +1,25 @@
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { supabase } from "../supabase"
 
 const Login_btn = () => {
   const navigate = useNavigate()
   const [isLoggedIn, setIsLoggedIn] = useState(true)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({data: {session}}) => {
+              setIsLoggedIn(!!session)
+            })
+    
+       const {data: listener} = supabase.auth.onAuthStateChange((_event, session) =>
+      {
+        setIsLoggedIn(!!session)
+
+      })
+    
+        return () => listener.subscription.unsubscribe()
+
+  },[])
 
   return (
     <>

@@ -7,6 +7,7 @@ import Service from './Components/Service.jsx'
 import About from './Components/About.jsx'
 import Support from './Components/Support.jsx'
 import Dashboard from './Components/Dashboard.jsx'
+import ProtectedRouter from './Components/ProtectedRouter.jsx'
 
 function App() {
   return(
@@ -19,7 +20,13 @@ function App() {
         <Route path='/service' element={<Service />} />
         <Route path='/support' element={<Support />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
-        <Route path='/dashboard' element={<Dashboard/>} />
+        
+        <Route path='/dashboard' element={
+         <ProtectedRouter>
+          <Dashboard/>
+        </ProtectedRouter>
+        }/>
+       
       </Routes>
     </>
 
