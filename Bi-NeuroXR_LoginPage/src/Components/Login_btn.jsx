@@ -4,7 +4,7 @@ import { supabase } from "../supabase"
 
 const Login_btn = () => {
   const navigate = useNavigate()
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
     supabase.auth.getSession().then(({data: {session}}) => {
