@@ -31,7 +31,7 @@ const LoginBox = ({ onFlip }) => {
                 redirectTo: "http://localhost:5173/dashboard"
             }
         })
-    } 
+} 
 
   return (
     <div className='wrapper-login'>
