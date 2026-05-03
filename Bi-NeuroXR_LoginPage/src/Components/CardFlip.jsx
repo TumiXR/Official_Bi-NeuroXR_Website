@@ -1,10 +1,19 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import LoginForm from './LoginBox'
 import RegisterForm from "./Register"
+import { supabase } from "../supabase"
+import { useNavigate } from "react-router-dom"
 
 
 const CardFlip = () => {
     const [isFlipped, setIsFlipped] = useState(false)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        supabase.auth.getSession().then(({ data: {session}}) =>{
+            if (session) navigate('/dashboard')
+        })
+    },[navigate])
 
   return (
     <div className='Card-Container'>

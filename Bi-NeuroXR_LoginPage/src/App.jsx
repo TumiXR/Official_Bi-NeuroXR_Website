@@ -15,7 +15,10 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<CardFlip />} />
-        <Route path='/login-page' element={<CardFlip />} />
+        <Route path='/login-page' element={
+          
+          <CardFlip/>
+      } />
         <Route path='/about' element={<About />} />
         <Route path='/service' element={<Service />} />
         <Route path='/support' element={<Support />} />

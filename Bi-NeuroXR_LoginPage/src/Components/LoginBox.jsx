@@ -9,11 +9,15 @@ const LoginBox = ({ onFlip }) => {
     //supabase use states
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
+    const [rememberMe, setRememberMe] = useState(false)
 
     const handleLogin = async () => {
       const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
+        options: { 
+            persistSession: rememberMe
+        }
       })
     
       if (error) {
@@ -67,7 +71,12 @@ const LoginBox = ({ onFlip }) => {
 
                     <div className='remember-forgot'>   
                         <label className='checkbox'>
-                            <input type='checkbox'></input>
+                            <input 
+                            type='checkbox'
+                            onChange={(e) => setRememberMe(e.target.checked)}
+                            >
+
+                            </input>
                                 Remember me 
                         </label>
                             <Link to='/forgot-password' className='forgot-link'>Forgot Password?</Link>
