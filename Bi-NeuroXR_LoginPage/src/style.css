@@ -359,7 +359,6 @@ to {
 }
 
 .social-icons{
-    margin-top: 16px;    
     gap: 12px;
     display: flex;
     flex-direction: row;
@@ -368,6 +367,7 @@ to {
 }
 
 .social-icons svg{
+    margin-bottom: 7px;    
     color: azure;
     fill: azure;
     cursor: pointer;
@@ -406,12 +406,12 @@ to {
     color: white;
     font-size: .9em;
     font-weight: 500;
-    margin: 20px;
+    margin: 12px;
     text-align: center;
 }
 
 .cw_text {
-    margin: 15px;
+    margin: 10px;
 }
 
 .btn {
