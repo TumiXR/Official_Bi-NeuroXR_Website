@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import LoginForm from './LoginBox'
 import RegisterForm from "./Register"
-import { supabase } from "../supabase"
+import { supabase } from "../../supabase"
 import { useNavigate } from "react-router-dom"
 
 

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { supabase } from "../supabase"
+import { supabase } from "../../supabase"
 
 const Login_btn = () => {
   const navigate = useNavigate()

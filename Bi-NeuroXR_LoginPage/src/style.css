@@ -12,7 +12,7 @@ body  {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('./assets/bg_img.jpg') no-repeat;
+    background: black repeat;
     background-color: #000;
 }
 
@@ -389,6 +389,10 @@ to {
 
 .remember-forgot a:hover{
     text-decoration: underline;
+}
+
+.forgot-link {
+    color: rgba(225 , 0 , 255, .5); 
 }
 
 .remember-forgot .checkbox {

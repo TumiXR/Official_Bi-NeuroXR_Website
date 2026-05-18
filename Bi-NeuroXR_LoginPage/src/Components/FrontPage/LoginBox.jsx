@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { supabase } from '../supabase'
+import { supabase } from '../../supabase'
 
 const LoginBox = ({ onFlip }) => {
     const [showPassword, setShowPassword] = useState(false)
@@ -32,7 +32,7 @@ const LoginBox = ({ onFlip }) => {
         await supabase.auth.signInWithOAuth({
             provider,
             options:{
-                redirectTo: "http://localhost:5173/dashboard"
+                redirectTo: "http://${window.location.host}/dashboard"
             }
         })
 } 

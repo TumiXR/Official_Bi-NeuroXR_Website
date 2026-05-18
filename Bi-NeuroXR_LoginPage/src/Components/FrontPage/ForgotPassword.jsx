@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import {supabase} from "../supabase"
+import {supabase} from "../../supabase"
 import { useState } from 'react'
 
 const ForgotPassword = () => {
@@ -15,7 +15,7 @@ const ForgotPassword = () => {
         console.log('reset email sent!')
       }
     }
-  return (
+  return ( 
     <div className='wrapper-Forgot'>
         <div className='form-box_forgot'>
             <h2>Forgot Password</h2>
